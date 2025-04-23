@@ -20,7 +20,7 @@ function Page() {
         // console.log(income)
         console.log(`${location.origin}/count`)
 
-        axios.post(`${location.origin}/api/count`,income)
+        axios.post(`${location.origin}/api/count`, income)
         e.target.reset()
         setIncome(initial)
 
@@ -31,7 +31,7 @@ function Page() {
         <div className=" m-5 flex items-center flex-col  place-content-center">
 
             <h3 className="text-xl font-semibold mb-3">আয় যোগ করুন</h3>
-            <form onSubmit={hndlSumbmit} className="mb-8 w-xl">
+            <form onSubmit={hndlSumbmit} className="mb-8 w-sm text-center">
                 <select
                     value={income.method}
                     className="w-full mb-2 p-2 border rounded"
@@ -80,46 +80,14 @@ function Page() {
                     <option value="dbbl">ডাচ-বাংলা</option>
                     <option value="islamic">ইসলামী</option>
                 </select>
-                {income.method === "income" ? <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+                {income.method === "income" ? <button className="w-sm text-center    bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
                     আয় যোগ করুন
-                </button> : <button className="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700">
+                </button> : <button className="w-sm text-center bg-red-600 text-white py-2 rounded hover:bg-red-700">
                     ব্যয় যোগ করুন
                 </button>}
 
             </form>
-            {/* 
-            <h3 className="text-xl font-semibold mb-3">ব্যয় যোগ করুন</h3>
-            <form className="w-xl">
-                <input
-                    type="text"
-                    placeholder="ব্যয়ের উদ্দেশ্য"
-                    className="w-full mb-2 p-2 border rounded"
-                    // value={expense.purpose}
-                    onChange={(e) => setExpense({ ...expense, purpose: e.target.value })}
-                    required
-                />
-                <input
-                    type="number"
-                    placeholder="পরিমাণ"
-                    className="w-full mb-2 p-2 border rounded"
-                    // value={expense.amount}
-                    onChange={(e) => setExpense({ ...expense, amount: e.target.value })}
-                    required
-                />
-                <select
-                    className="w-full mb-2 p-2 border rounded"
-                    // value={expense.fund}
-                    onChange={(e) => setExpense({ ...expense, fund: e.target.value })}
-                >
-                    <option value="cash">হ্যান্ড ক্যাশ</option>
-                    <option value="bkash">বিকাশ</option>
-                    <option value="dbbl">ডাচ-বাংলা</option>
-                    <option value="islamic">ইসলামী</option>
-                </select>
-                <button className="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700">
-                    ব্যয় যোগ করুন
-                </button>
-            </form> */}
+
             <Link href={"count/details"} className="w-sm mt-5 text-center   bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
                 Details of আয় ব্যয়
             </Link>
